@@ -60,4 +60,8 @@ class SrcCodeDataset(Dataset):
                     encoded_plus = model.tokenizer.encode_plus(
                         model.tokenize("<java>") + example["token_ids"] + [model.eos_token_id],
                         max_length=model.max_seq_length)
+                else:
+                    encoded_plus = model.tokenizer.encode_plus(
+                        model.tokenize(f"<{example['label'].lower()}>") + example["token_ids"] + [model.eos_token_id],
+                        max_length=model.max_seq_length)
                 self.inputs.append(encoded_plus.data)

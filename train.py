@@ -70,7 +70,7 @@ if __name__ == '__main__':
     #initialize model by model name (the same as used in transformers lib)
     model = GPTSingleHead(MODEL_MAP[args.model_select], max_seq_length=args.max_seq_length)
     #add special tokens for controlling code generation by different programming language
-    model.add_special_words({"pad_token": "<pad>", "additional_special_tokens": ["<python>", "<java>"]})
+    model.add_special_words({"pad_token": "<pad>", "additional_special_tokens": ["<examples>"]})
     #load training dataset
     file_path = dataset_folder + "train.jsonl"
     train_dataset = SrcCodeDataset(file_path, model, cache_path=os.path.join(".cache", output_path, "train"))
