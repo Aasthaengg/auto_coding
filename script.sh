@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/krshrimali/auto_coding.git && cd auto_coding
+git clone https://github.com/Aasthaengg/auto_coding.git && cd auto_coding
 pip install -r requirements.txt # transformers, pytorch etc.
 
 declare -A hashmap
